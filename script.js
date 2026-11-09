@@ -4,7 +4,7 @@
   const SHOT = new URLSearchParams(location.search).has("shot");
   if (SHOT) {
     const s = document.createElement("style");
-    s.textContent = "html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}.mv-rev,.clip,.hero-copy .lead,.hero-copy .role,.hero-cta,.hero-meta{opacity:1!important;translate:0 0!important}.hero-name .mask span,.mask-w i{translate:0 0!important;opacity:1!important}.lens{display:none!important}html.shot .hero,html.shot .hero-stage{min-height:880px!important;height:880px!important}";
+    s.textContent = "html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}.mv-rev,.hero-copy .lead,.hero-copy .role,.hero-cta,.hero-meta{opacity:1!important;translate:0 0!important}.hero-name .mask span,.mask-w i{translate:0 0!important;opacity:1!important}.lens{display:none!important}html.shot .hero,html.shot .hero-stage{min-height:880px!important;height:880px!important}";
     document.head.appendChild(s);
     document.documentElement.classList.add("shot");
   }
@@ -43,6 +43,7 @@
     }
   } else ready();
 
+  const root = document.documentElement;
   const header = $("#head");
   let lastY = scrollY;
   const themeBoxes = () => $$(".paper, .dark, .hero, footer.wide-foot");
@@ -50,12 +51,14 @@
   addEventListener("resize", () => (boxes = themeBoxes()));
   const setTheme = () => {
     if (!header) return;
-    let theme = "light";
-    for (const b of boxes) {
-      const r = b.getBoundingClientRect();
-      if (r.bottom > 96 && r.top <= 96) {
-        theme = b.classList.contains("paper") || b.id === "hero" ? "light" : "dark";
-        break;
+    let theme = root.dataset.mode === "night" ? "dark" : "light";
+    if (root.dataset.mode !== "night") {
+      for (const b of boxes) {
+        const r = b.getBoundingClientRect();
+        if (r.bottom > 96 && r.top <= 96) {
+          theme = b.classList.contains("paper") || b.id === "hero" ? "light" : "dark";
+          break;
+        }
       }
     }
     if (header.dataset.theme !== theme) header.dataset.theme = theme;
@@ -68,6 +71,67 @@
   }, { passive: true });
   setTheme();
 
+  // --- Thème jour / nuit choisi par le visiteur ---
+  const THEME_KEY = "pd-theme";
+  const themeBtn = $("#themeToggle");
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const scheme = matchMedia("(prefers-color-scheme: dark)");
+  const swatches = $$(".swatch");
+  const savedTheme = () => {
+    try {
+      return localStorage.getItem(THEME_KEY);
+    } catch {
+      return null;
+    }
+  };
+  const saveTheme = (value) => {
+    try {
+      localStorage.setItem(THEME_KEY, value);
+    } catch {}
+  };
+  const paintHero = (night) => {
+    const heroEl = $("#hero");
+    if (!heroEl) return;
+    const backdrop = night ? "#171311" : "#e6ded1";
+    heroEl.style.setProperty("--bd", backdrop);
+    heroEl.style.setProperty("--n1", night ? "#f1ece4" : "#141210");
+    heroEl.style.setProperty("--n2", night ? "#ff5a3c" : "#ff5b2e");
+    heroEl.classList.toggle("dark", night);
+    swatches.forEach((swatch) => {
+      swatch.setAttribute("aria-pressed", String(swatch.dataset.backdrop === backdrop));
+    });
+  };
+  const applyMode = (next, persist) => {
+    const night = next === "night";
+    root.dataset.mode = night ? "night" : "day";
+    if (persist) saveTheme(root.dataset.mode);
+    if (themeMeta) themeMeta.setAttribute("content", night ? "#171311" : "#f1ece4");
+    if (themeBtn) {
+      const label = night ? "Passer en mode jour" : "Passer en mode nuit";
+      themeBtn.setAttribute("aria-pressed", String(night));
+      themeBtn.setAttribute("aria-label", label);
+      themeBtn.setAttribute("title", label);
+    }
+    paintHero(night);
+    setTheme();
+  };
+  let mode = root.dataset.mode === "night" ? "night" : "day";
+  applyMode(mode, false);
+  themeBtn?.addEventListener("click", () => {
+    mode = mode === "night" ? "day" : "night";
+    applyMode(mode, true);
+  });
+  scheme.addEventListener?.("change", (e) => {
+    if (savedTheme()) return;
+    mode = e.matches ? "night" : "day";
+    applyMode(mode, false);
+  });
+  addEventListener("storage", (e) => {
+    if (e.key !== THEME_KEY) return;
+    mode = e.newValue === "night" ? "night" : "day";
+    applyMode(mode, false);
+  });
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
@@ -77,7 +141,6 @@
     });
   }, { threshold: 0.16 });
   $$(".mv-rev").forEach((el) => io.observe(el));
-  $$(".clips").forEach((el) => io.observe(el));
 
   const splitWords = (el) => {
     const text = el.textContent.trim();
@@ -113,7 +176,7 @@
   }, { threshold: 0.35 });
   $$("h2[data-words]").forEach((el) => hdIO.observe(el));
   if (SHOT) {
-    $$(".mv-rev, .clips, h2[data-words]").forEach((el) => el.classList.add("in"));
+    $$(".mv-rev, h2[data-words]").forEach((el) => el.classList.add("in"));
     if (location.hash) setTimeout(() => $(location.hash)?.scrollIntoView({ block: "start" }), 120);
     setTimeout(() => {
       const about = $("#about");

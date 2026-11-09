@@ -6,6 +6,18 @@
   <title>PatrickDev — Développeur Front-End à Abidjan</title>
   <meta name="description" content="Portfolio de N'Dri Kouakou Patrick Angelin (PatrickDev), développeur front-end à Abidjan. Interfaces web modernes, responsive et accessibles. BTS IDA · Pigier Côte d'Ivoire.">
   <meta name="theme-color" content="#171311">
+  <script>
+    (function () {
+      var mode;
+      try {
+        mode = localStorage.getItem("pd-theme");
+      } catch (e) {}
+      if (mode !== "day" && mode !== "night") {
+        mode = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "night" : "day";
+      }
+      document.documentElement.dataset.mode = mode;
+    })();
+  </script>
   <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
   <link rel="canonical" href="https://patrickdev-portfolio.vercel.app/">
   <meta property="og:type" content="website">
@@ -51,11 +63,14 @@
         <a href="#about">À propos</a>
         <a href="#services">Services</a>
         <a href="#resume">Résumé</a>
-        <a href="#reviews">Témoignages</a>
         <a href="#contact">Contact</a>
       </nav>
       <span class="a-dot"><span class="pulse"></span>Disponible pour un stage</span>
       <a class="head-cta magnet" href="#contact">Engage-moi <span class="arr">↗</span></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Passer en mode nuit" aria-pressed="false" title="Passer en mode nuit">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M4.3 4.3l1.6 1.6M18.1 18.1l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.3 19.7l1.6-1.6M18.1 5.9l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.2 14.4A8.4 8.4 0 0 1 9.6 3.8 8.6 8.6 0 1 0 20.2 14.4Z"/></svg>
+      </button>
       <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
     </div>
   </header>
@@ -75,7 +90,7 @@
             <span class="roll"><span>Regarde mon travail</span><span>Regarde mon travail</span></span>
             <span class="arrow mono">↗</span>
           </a>
-          <a class="btn glass magnet" href="public/CV_NDRI_Kouakou_Patrick_Angelin.pdf" download>
+          <a class="btn glass magnet" href="public/CV_N%27dri_kouakou_patrick_angelin.pdf" download>
             <span class="fill"></span>
             <span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span>
             <span class="arrow mono">↓</span>
@@ -123,7 +138,7 @@
           <p style="margin-top:26px;max-width:52ch;color:var(--mute)">Étudiant en 3e année à Pigier Côte d'Ivoire, titulaire d'un BTS IDA depuis août 2025. J'ai découvert le développement web et mobile lors de mon stage chez LAHA Communication. Aujourd'hui, je cherche un stage de 3 mois pour valider ma licence.</p>
           <div class="intro-cta">
             <a class="btn solid magnet" href="#resume"><span class="fill"></span><span class="roll"><span>Mon parcours</span><span>Mon parcours</span></span><span class="arrow mono">↗</span></a>
-            <a class="btn ghost magnet" href="public/CV_NDRI_Kouakou_Patrick_Angelin.pdf" download><span class="fill"></span><span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span><span class="arrow mono">↓</span></a>
+            <a class="btn ghost magnet" href="public/CV_N%27dri_kouakou_patrick_angelin.pdf" download><span class="fill"></span><span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span><span class="arrow mono">↓</span></a>
           </div>
         </div>
           <figure class="ob mv-rev" id="obBox" style="--d:.2s">
@@ -379,11 +394,11 @@
         <h2 class="tools-intro mv-rev" style="font-size:clamp(26px,2.4vw,36px);max-width:20ch;margin-top:20px">Design et code, mêmes mains.</h2>
         <div class="tool-cols" style="margin-top:34px">
           <div class="tool-col mv-rev">
-            <div class="head"><span class="mono" style="color:var(--ink)">Design</span><span class="mono">05 outils</span></div>
+            <div class="head"><span class="mono" style="color:var(--fg)">Design</span><span class="mono">05 outils</span></div>
             <div class="tag-list"><span class="stick">Figma 01</span><span class="stick">Photoshop 02</span><span class="stick">Canva 03</span><span class="stick">Balsamiq 04</span><span class="stick">Notion 05</span></div>
           </div>
           <div class="tool-col mv-rev" style="--d:.08s">
-            <div class="head"><span class="mono" style="color:var(--ink)">Code</span><span class="mono">07 outils</span></div>
+            <div class="head"><span class="mono" style="color:var(--fg)">Code</span><span class="mono">07 outils</span></div>
             <div class="tag-list"><span class="stick">HTML 01</span><span class="stick">CSS 02</span><span class="stick">JavaScript 03</span><span class="stick">React 04</span><span class="stick">Git 05</span><span class="stick">GitHub 06</span><span class="stick">VS Code 07</span></div>
           </div>
         </div>
@@ -406,25 +421,8 @@
           <div class="credit-row mv-rev" style="--d:.15s"><div><span class="role">Recherche de stage — 3 mois</span><span class="who">Validation de la licence · Disponible à Abidjan</span></div><span class="span">2026</span></div>
         </div>
         <div class="intro-cta">
-          <a class="btn solid magnet" href="public/CV_NDRI_Kouakou_Patrick_Angelin.pdf" download><span class="fill"></span><span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span><span class="arrow mono">↓</span></a>
+          <a class="btn solid magnet" href="public/CV_N%27dri_kouakou_patrick_angelin.pdf" download><span class="fill"></span><span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span><span class="arrow mono">↓</span></a>
           <a class="btn ghost magnet" href="https://www.linkedin.com/in/n-dri-patrick-2b107b2aa/" target="_blank" rel="noopener"><span class="fill"></span><span class="roll"><span>Profil LinkedIn</span><span>Profil LinkedIn</span></span><span class="arrow mono">↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="sec paper grain" id="reviews">
-      <div class="wrap">
-        <div class="sec-head">
-          <div>
-            <span class="eyebrow mv-rev">Cadre 07 — Témoignages</span>
-            <h2 data-words data-accent="1" style="margin-top:26px">Bouche à oreille.</h2>
-          </div>
-          <div class="mira mv-rev"><span class="mono">Exemples de démonstration · à remplacer</span><span class="counter" style="font-size:26px">03<span class="counter-o"> / 03</span></span></div>
-        </div>
-        <div class="clips" id="clips">
-          <figure class="clip"><div class="tape"></div><span class="mono">Clip 01 · Démo</span><blockquote>“Patrick a transformé notre maquette en un site clair et rapide. Le rendu mobile est impeccable.”</blockquote><figcaption class="who"><span>Awa K.</span><span>Studio Kora · Démo</span></figcaption></figure>
-          <figure class="clip"><div class="tape"></div><span class="mono">Clip 02 · Démo</span><blockquote>“Très à l'écoute, précis sur les détails et toujours disponible pour ajuster. Une collaboration simple.”</blockquote><figcaption class="who"><span>Yann B.</span><span>Atelier Nima · Démo</span></figcaption></figure>
-          <figure class="clip"><div class="tape"></div><span class="mono">Clip 03 · Démo</span><blockquote>“Le site est arrivé en avance, propre et facile à mettre à jour. On recommande sans hésiter.”</blockquote><figcaption class="who"><span>Mariam T.</span><span>Maison Nima · Démo</span></figcaption></figure>
         </div>
       </div>
     </section>
@@ -433,7 +431,7 @@
       <div class="wrap">
         <div class="sec-head">
           <div>
-            <span class="eyebrow mv-rev">Cadre 08 — Le labo</span>
+            <span class="eyebrow mv-rev">Cadre 07 — Le labo</span>
             <h2 data-words data-accent="1" style="margin-top:26px">Expériences &amp; side-projects.</h2>
           </div>
           <div class="mira mv-rev"><span class="mono">La bobine du labo · 16mm · 4 frames</span></div>
@@ -450,7 +448,7 @@
     <section class="sec dark grain" id="contact">
       <div class="wrap contact-grid">
         <div>
-          <span class="eyebrow mv-rev">Cadre 09 — Contact</span>
+          <span class="eyebrow mv-rev">Cadre 08 — Contact</span>
           <h2 data-words style="margin-top:22px">Un projet ? Disons « action ».</h2>
           <p class="lead mv-rev">Tu cherches un développeur front-end pour un stage de 3 mois ou une mission ? Écris-moi — je réponds dans la journée.</p>
           <div class="email-row mv-rev">
@@ -498,7 +496,6 @@
           <h4>Pages</h4>
           <a href="#about">À propos</a><br>
           <a href="#resume">Résumé</a><br>
-          <a href="#reviews">Témoignages</a><br>
           <a href="#lab">Le labo</a><br>
           <a href="#contact">Contact</a>
         </div>
