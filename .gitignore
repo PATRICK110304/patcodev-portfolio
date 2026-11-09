@@ -1,0 +1,10 @@
+.vercel
+.env*
+__diag.html
+__preview.html
+public/nothline-shot.svg
+public/nothline-thumb.svg
+public/zerorang-shot.svg
+public/zerorang-thumb.svg
+Thumbs.db
+.DS_Store

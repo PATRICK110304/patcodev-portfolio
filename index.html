@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PatrickDev — Développeur Front-End à Abidjan</title>
+  <meta name="description" content="Portfolio de N'Dri Kouakou Patrick Angelin (PatrickDev), développeur front-end à Abidjan. Interfaces web modernes, responsive et accessibles. BTS IDA · Pigier Côte d'Ivoire.">
+  <meta name="theme-color" content="#171311">
+  <link rel="icon" href="public/favicon.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://patrickdev-portfolio.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://patrickdev-portfolio.vercel.app/">
+  <meta property="og:title" content="PatrickDev — Développeur Front-End à Abidjan">
+  <meta property="og:description" content="Portfolio de N'Dri Kouakou Patrick Angelin (PatrickDev), développeur front-end à Abidjan. Interfaces web modernes, responsives et accessibles.">
+  <meta property="og:image" content="https://patrickdev-portfolio.vercel.app/public/og-cover.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portfolio de PatrickDev, développeur front-end à Abidjan">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PatrickDev — Développeur Front-End à Abidjan">
+  <meta name="twitter:description" content="Interfaces web modernes, responsives et accessibles. Portfolio de N'Dri Kouakou Patrick Angelin.">
+  <meta name="twitter:image" content="https://patrickdev-portfolio.vercel.app/public/og-cover.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&family=Chivo+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="loader" id="loader" role="button" aria-label="Ignorer l'intro">
+    <div class="sprockets l"></div>
+    <div class="sprockets r"></div>
+    <div class="dial">
+      <div class="ring"></div>
+      <div class="ring r2"></div>
+      <div class="hand"></div>
+      <div class="count">3</div>
+    </div>
+    <div class="loader-meta">
+      <span class="rec">Rec · PatrickDev Studio</span>
+      <span class="mono" style="color:var(--stone)">00:00:00:00 · Cliquez ou appuyez sur une touche pour ignorer</span>
+    </div>
+  </div>
+
+  <header class="site-head" data-theme="light" id="head">
+    <div class="head-bar">
+      <a class="brand" href="#top"><span class="mark mono">P</span>PatrickDev</a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#work">Œuvre</a>
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#resume">Résumé</a>
+        <a href="#reviews">Témoignages</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="a-dot"><span class="pulse"></span>Disponible pour un stage</span>
+      <a class="head-cta magnet" href="#contact">Engage-moi <span class="arr">↗</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="hero vignette" id="hero">
+      <div class="hero-tint"></div>
+      <div class="hero-light"></div>
+
+      <div class="hero-copy">
+        <h1 class="role">Développeur<br>Front-End</h1>
+        <p class="lead">Étudiant en 3e année à Pigier Côte d'Ivoire, je conçois des interfaces web modernes, responsives et accessibles. BTS IDA obtenu en 2025.</p>
+        <div class="hero-cta">
+          <a class="btn solid magnet" href="#work">
+            <span class="fill"></span>
+            <span class="roll"><span>Regarde mon travail</span><span>Regarde mon travail</span></span>
+            <span class="arrow mono">↗</span>
+          </a>
+          <a class="btn glass magnet" href="public/CV_NDRI_Kouakou_Patrick_Angelin.pdf" download>
+            <span class="fill"></span>
+            <span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span>
+            <span class="arrow mono">↓</span>
+          </a>
+        </div>
+        <div class="hero-status">
+          <span class="a-dot"><span class="pulse"></span>Disponible pour un stage de 3 mois</span>
+          <span>Abidjan · UTC+0 · <span class="clock" id="clockHeroMobile">—:—:—</span></span>
+        </div>
+      </div>
+
+      <div class="hero-meta">
+        <div class="row"><span class="a-dot"><span class="pulse"></span>Disponible pour un stage de 3 mois</span></div>
+        <div class="row mono"><span>Abidjan · UTC+0 · <span class="clock" id="clockHero">—:—:—</span></span></div>
+        <div class="row mono">Front-end · Web &amp; mobile</div>
+      </div>
+
+      <div class="hero-stage">
+        <h2 class="hero-name" aria-label="PatrickDev" id="heroName">
+          <span class="mask"><span class="p1">PATRICK&nbsp;</span></span><span class="mask"><span class="p2">DEV</span></span>
+        </h2>
+
+      </div>
+
+      <div class="hero-bottom mono">
+        <span class="hint">☂ Déplace la lumière · clique pour changer le décor</span>
+        <div class="backdrops" role="group" aria-label="Couleur du décor">
+          <button class="swatch" data-backdrop="#e6ded1" data-n1="#141210" data-n2="#ff5b2e" aria-pressed="true" style="--c:#e6ded1" title="Beige"></button>
+          <button class="swatch" data-backdrop="#ff5a3c" data-n1="#f1ece4" data-n2="#141210" aria-pressed="false" style="--c:#ff5a3c" title="Rouge-orange"></button>
+          <button class="swatch" data-backdrop="#171311" data-n1="#f1ece4" data-n2="#ff5a3c" data-invert="1" aria-pressed="false" style="--c:#171311" title="Noir"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec paper grain" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <span class="eyebrow mv-rev">Cadre 01 — À propos</span>
+          <h2 data-words data-accent="8,9" style="margin-top:28px">Je suis Patrick. Je transforme les idées en interfaces vivantes, accessibles et rapides.</h2>
+          <div class="facts">
+            <div class="fact mv-rev"><span class="num">01</span><span class="val">3 ans d'études</span></div>
+            <div class="fact mv-rev" style="--d:.08s"><span class="num">02</span><span class="val">1 BTS IDA obtenu</span></div>
+            <div class="fact mv-rev" style="--d:.16s"><span class="num">03</span><span class="val">Stage de 3 mois recherché</span></div>
+          </div>
+          <p style="margin-top:26px;max-width:52ch;color:var(--mute)">Étudiant en 3e année à Pigier Côte d'Ivoire, titulaire d'un BTS IDA depuis août 2025. J'ai découvert le développement web et mobile lors de mon stage chez LAHA Communication. Aujourd'hui, je cherche un stage de 3 mois pour valider ma licence.</p>
+          <div class="intro-cta">
+            <a class="btn solid magnet" href="#resume"><span class="fill"></span><span class="roll"><span>Mon parcours</span><span>Mon parcours</span></span><span class="arrow mono">↗</span></a>
+            <a class="btn ghost magnet" href="public/CV_NDRI_Kouakou_Patrick_Angelin.pdf" download><span class="fill"></span><span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span><span class="arrow mono">↓</span></a>
+          </div>
+        </div>
+          <figure class="ob mv-rev" id="obBox" style="--d:.2s">
+            <div class="ob-stage">
+              <div class="ob-ring" id="obRingA" data-spin="140"></div>
+              <div class="ob-ring" id="obRingB" data-spin="100"></div>
+              <div class="ob-ring" id="obRingC" data-spin="70"></div>
+              <div class="ob-ring ob-rev" id="obRingD" data-spin="95"></div>
+              <div class="ob-ring" id="obRingE" data-spin="55"></div>
+
+              <div class="ob-photo"><img src="public/moi.png" alt="Portrait de PatrickDev" loading="lazy"></div>
+
+              <div class="ob-chip ob-tl"><i class="ob-cd"></i><div><span class="ob-lbl">Années d'études</span><strong>3</strong></div></div>
+              <div class="ob-chip ob-r"><i class="ob-cd ob-violet"></i><div><span class="ob-lbl">Projets</span><strong>2</strong></div></div>
+              <div class="ob-chip ob-b"><i class="ob-cd"></i><span class="ob-lbl">Statut</span><i class="ob-cd ob-white"></i><strong>dispo pour un stage</strong></div>
+            </div>
+            <figcaption class="ob-cap"><span>Écran 01 · Portrait</span><span>PatrickDev · 2026</span></figcaption>
+
+            <style>
+              .ob { --ox: 0; --oy: 0; justify-self: end; position: sticky; top: 110px; width: clamp(300px, 34vw, 500px); margin: 0; }
+              .ob-stage {
+                --orb: #e05a00; --dot: #22d3ee;
+                position: relative; width: 100%; aspect-ratio: 1; container-type: inline-size;
+                border-radius: 28px; overflow: clip;
+                background:
+                  radial-gradient(60% 50% at 8% 0%, rgba(120,70,200,.38), transparent 70%),
+                  linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 36px 36px,
+                  linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px) 0 0 / 36px 36px,
+                  linear-gradient(160deg, #141636 0%, #0a1a3a 55%, #050816 100%);
+                background-color: #0a0e1f;
+                box-shadow: 0 40px 90px rgba(20,18,16,.35), inset 0 0 0 1px rgba(255,255,255,.08);
+              }
+              .ob-photo {
+                position: absolute; left: 13%; top: 11%; width: 74%; aspect-ratio: 1; border-radius: 50%;
+                overflow: clip; border: 1px solid rgba(255,255,255,.3);
+                background: radial-gradient(circle at 50% 35%, #f06a00 0%, var(--orb) 45%, #c24800 100%);
+                box-shadow: 0 0 0 1px rgba(224,90,0,.4), 0 20px 60px rgba(0,0,0,.5);
+              }
+              .ob-photo img {
+                position: absolute; left: 50%; top: 10%; width: 78%; height: auto; max-width: none;
+                translate: calc(-50% + var(--ox) * 8px) calc(var(--oy) * 6px);
+                transition: translate .25s ease-out; filter: brightness(1.07) contrast(1.05);
+              }
+              .ob-ring { position: absolute; inset: 0; animation: ob-spin 120s linear infinite; }
+              .ob-rev { animation-direction: reverse; }
+              .ob-dotp {
+                position: absolute; top: 50%; left: 50%;
+                width: calc(var(--s) * 1cqw); height: calc(var(--s) * 1cqw); margin: calc(var(--s) * -.5cqw);
+                border-radius: 50%; background: var(--c);
+                transform: rotate(var(--a)) translateX(calc(var(--r) * 1cqw));
+              }
+              .ob-glow { box-shadow: 0 0 8px var(--dot); }
+              .ob-probe {
+                position: absolute; top: 50%; left: 50%; width: 5cqw; height: 5cqw; margin: -2.5cqw;
+                border: 1px solid rgba(255,255,255,.6); border-radius: 50%;
+                transform: rotate(var(--a)) translateX(calc(var(--r) * 1cqw));
+              }
+              .ob-probe::after { content: ""; position: absolute; top: 50%; left: 50%; width: 1cqw; height: 1cqw; margin: -.5cqw; border-radius: 50%; background: #fff; }
+              @keyframes ob-spin { to { rotate: 360deg; } }
+
+              .ob-chip {
+                position: absolute; display: flex; align-items: center; gap: 2cqw;
+                padding: 2.2cqw 3.4cqw; border-radius: 3.2cqw; color: #fff; white-space: nowrap;
+                font-size: clamp(.62rem, 2.3cqw, .85rem);
+                background: rgba(20,24,52,.72); border: 1px solid rgba(255,255,255,.18);
+                -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+                translate: calc(var(--ox) * -10px) calc(var(--oy) * -8px);
+                transition: translate .25s ease-out; animation: ob-float 6s ease-in-out infinite;
+              }
+              .ob-chip > div { display: flex; flex-direction: column; gap: .2em; }
+              .ob-lbl { font-family: "Chivo Mono", ui-monospace, monospace; font-size: .82em; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.75); }
+              .ob-chip strong { font-family: "Chivo Mono", ui-monospace, monospace; font-size: 1.25em; font-weight: 700; color: #fff; }
+              .ob-cd { width: 1.6cqw; height: 1.6cqw; min-width: 7px; min-height: 7px; border-radius: 50%; background: var(--dot); box-shadow: 0 0 8px var(--dot); flex: none; }
+              .ob-violet { background: #a78bfa; box-shadow: 0 0 8px #a78bfa; }
+              .ob-white { background: #fff; box-shadow: none; width: 2.2cqw; height: 2.2cqw; min-width: 9px; min-height: 9px; }
+              .ob-tl { top: 4%; left: 3%; }
+              .ob-r { top: 38%; right: 2%; animation-delay: -2s; }
+              .ob-b { bottom: 8%; left: 0; right: 0; margin-inline: auto; width: max-content; animation-delay: -4s; }
+              @keyframes ob-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+              .ob-cap { display: flex; justify-content: space-between; gap: 20px; margin-top: 15px; font-family: "Chivo Mono", ui-monospace, monospace; font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: #857b70; }
+
+              @media (max-width: 1099px) { .ob { position: relative; top: 0; justify-self: start; width: min(100%, 440px); } }
+              @media (prefers-reduced-motion: reduce) { .ob-ring, .ob-chip { animation: none; } }
+            </style>
+
+            <script>
+              (function () {
+                var box = document.getElementById("obBox");
+                if (!box || box.dataset.ready) return;
+                box.dataset.ready = "1";
+                var seed = 7;
+                function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+                function dots(id, n, rMin, rMax, sMin, sMax, color, glow) {
+                  var ring = document.getElementById(id);
+                  if (!ring) return;
+                  for (var i = 0; i < n; i++) {
+                    var d = document.createElement("i");
+                    d.className = "ob-dotp" + (glow ? " ob-glow" : "");
+                    d.style.setProperty("--a", (i / n * 360 + rnd() * 6) + "deg");
+                    d.style.setProperty("--r", rMin + rnd() * (rMax - rMin));
+                    d.style.setProperty("--s", sMin + rnd() * (sMax - sMin));
+                    d.style.setProperty("--c", color);
+                    ring.appendChild(d);
+                  }
+                }
+                dots("obRingA", 96, 47, 47.5, 0.5, 0.8, "rgba(255,255,255,.28)");
+                dots("obRingB", 72, 43, 43.5, 0.5, 0.8, "rgba(255,255,255,.2)");
+                dots("obRingC", 12, 40, 47, 1.6, 2.4, "#22d3ee", true);
+                dots("obRingD", 10, 41, 46, 1.4, 2.2, "#22d3ee", true);
+                var probe = document.createElement("i");
+                probe.className = "ob-probe";
+                probe.style.setProperty("--a", "200deg");
+                probe.style.setProperty("--r", "42");
+                document.getElementById("obRingE").appendChild(probe);
+                Array.prototype.forEach.call(box.querySelectorAll(".ob-ring"), function (r) {
+                  r.style.animationDuration = r.getAttribute("data-spin") + "s";
+                });
+                if (window.matchMedia("(hover: hover)").matches && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                  box.addEventListener("pointermove", function (e) {
+                    var b = box.getBoundingClientRect();
+                    box.style.setProperty("--ox", ((e.clientX - b.left) / b.width - 0.5).toFixed(3));
+                    box.style.setProperty("--oy", ((e.clientY - b.top) / b.height - 0.5).toFixed(3));
+                  });
+                  box.addEventListener("pointerleave", function () {
+                    box.style.setProperty("--ox", 0);
+                    box.style.setProperty("--oy", 0);
+                  });
+                }
+              })();
+            </script>
+          </figure>
+      </div>
+    </section>
+
+    <section class="sec dark grain" id="work">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow mv-rev">Cadre 02 — Œuvre</span>
+            <h2 data-words data-accent="2" style="margin-top:26px">Je suis fier de.</h2>
+          </div>
+          <div class="mira mv-rev"><span class="mono" style="text-transform:none">Planche-contact · Roll 07 · PD 400TX</span></div>
+        </div>
+
+        <div class="work-grid">
+          <aside class="filmstrip mv-rev" id="filmstrip" aria-label="Planche-contact"></aside>
+          <div class="work-stage mv-rev">
+            <div class="work-title-row">
+              <span class="tagline">Châssis <span id="frameTag">01A</span> · <span id="frameKind">Web · Commercial</span></span>
+              <a class="work-link" id="workLink" href="https://northline-commercial-umber.vercel.app/" target="_blank" rel="noopener" aria-label="Ouvrir le site Northline Commercial dans un nouvel onglet">Voir le site <span class="arrow mono" aria-hidden="true">↗</span></a>
+              <div class="counter" id="sheetNum" aria-label="Projet sélectionné">01<span class="counter-o"> / 02</span></div>
+            </div>
+            <div class="work-shot" id="workShot" role="button" aria-label="Agrandir l'image du projet" tabindex="0">
+              <img id="shotImg" src="public/northline-shot.webp" alt="Aperçu du site Northline Commercial" onerror="this.onerror=null;this.src='https://picsum.photos/seed/northline/1600/900.jpg?grayscale'">
+              <span class="frame-tag">Châssis <span id="tagInside">01A</span></span>
+              <span class="zoom-tag">Clique pour agrandir</span>
+              <span class="work-send mono">↗</span>
+            </div>
+            <div class="work-info">
+              <div class="meta"><span class="k">Rôle</span><span class="v" id="metaRole">Front-end</span></div>
+              <div class="meta"><span class="k">Client</span><span class="v" id="metaClient">Northline</span></div>
+              <div class="meta"><span class="k">Année</span><span class="v" id="metaYear">2026</span></div>
+            </div>
+            <div class="work-tags" id="metaTags"><span class="pill">React</span><span class="pill">Tailwind</span><span class="pill">Vite</span><span class="pill">Responsive</span></div>
+          </div>
+        </div>
+
+        <div class="proj-grid">
+          <div class="proj-cell mv-rev">
+            <a class="proj-card" href="https://zerorang.online/" target="_blank" rel="noopener" aria-label="Ouvrir le projet ZeroRang dans un nouvel onglet">
+              <div class="proj-shot">
+                <img src="public/zerorang-shot.webp" alt="Aperçu du site ZeroRang" loading="lazy">
+                <span class="proj-stack"><span class="proj-stack-k">Stack</span><span class="proj-stack-v">React</span></span>
+              </div>
+              <div class="proj-body">
+                <span class="proj-meta">Web · Application · 2026</span>
+                <h3>ZeroRang</h3>
+                <p>Application web (PWA) d'inscription scolaire à Abidjan.</p>
+                <span class="proj-demo">Voir le site <span class="arrow mono" aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+          <div class="proj-cell mv-rev" style="--d:.08s">
+            <a class="proj-card" href="https://northline-commercial-umber.vercel.app/" target="_blank" rel="noopener" aria-label="Ouvrir le projet Northline Commercial dans un nouvel onglet">
+              <div class="proj-shot">
+                <img src="public/northline-shot.webp" alt="Aperçu du site Northline Commercial" loading="lazy">
+                <span class="proj-stack"><span class="proj-stack-k">Stack</span><span class="proj-stack-v">React · Tailwind</span></span>
+              </div>
+              <div class="proj-body">
+                <span class="proj-meta">Site vitrine · 2026</span>
+                <h3>Northline Commercial</h3>
+                <p>Site vitrine pour Northline Commercial, spécialiste de l'immobilier d'entreprise premium en Côte d'Ivoire. Une interface bilingue, responsive et rapide qui met les espaces et la prise de contact en avant.</p>
+                <span class="proj-demo">Voir le site <span class="arrow mono" aria-hidden="true">↗</span></span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="intro-cta"><a class="btn ghost magnet" href="https://github.com/PATRICK110304" target="_blank" rel="noopener"><span class="fill"></span><span class="roll"><span>Voir mon GitHub</span><span>Voir mon GitHub</span></span><span class="arrow mono">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="sec paper grain" id="services">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow mv-rev">Cadre 03 — Services</span>
+            <h2 data-words data-accent="2" style="margin-top:26px">Ce que je peux faire pour toi.</h2>
+          </div>
+          <div class="mira mv-rev"><span class="counter">04<span class="counter-o"> / 04</span></span><span class="mono" style="text-transform:none">Front-end · Web · Mobile · UI</span></div>
+        </div>
+        <div class="gels">
+          <div class="gel mv-rev"><span class="ggel-num mono" style="color:var(--ink)"><span>01</span><span>5 livrables</span></span><h3>Développement front-end</h3><p>Des pages HTML, CSS et JavaScript propres, rapides et responsives, prêtes pour la production.</p><div class="pills"><span class="pill">HTML</span><span class="pill">CSS</span><span class="pill">JavaScript</span><span class="pill">Responsive</span><span class="pill">SEO de base</span></div></div>
+          <div class="gel mv-rev" style="--d:.06s"><span class="ggel-num mono" style="color:var(--ink)"><span>02</span><span>5 livrables</span></span><h3>Intégration d'interface</h3><p>Tes maquettes Figma transformées en interfaces fidèles, accessibles et animées.</p><div class="pills"><span class="pill">Figma → UI</span><span class="pill">Composants</span><span class="pill">Animations</span><span class="pill">Accessibilité</span><span class="pill">API fetch</span></div></div>
+          <div class="gel mv-rev" style="--d:.12s"><span class="ggel-num mono" style="color:var(--ink)"><span>03</span><span>5 livrables</span></span><h3>Sites vitrines</h3><p>Des sites de présentation légers, faciles à maintenir et pensés d'abord pour le mobile.</p><div class="pills"><span class="pill">Vitrine</span><span class="pill">Formulaire</span><span class="pill">Hébergement</span><span class="pill">SEO</span><span class="pill">Suivi</span></div></div>
+          <div class="gel mv-rev" style="--d:.18s"><span class="ggel-num mono" style="color:var(--ink)"><span>04</span><span>5 livrables</span></span><h3>Applications mobiles</h3><p>Des prototypes et interfaces mobiles, du premier écran jusqu'à l'intégration finale.</p><div class="pills"><span class="pill">Mobile</span><span class="pill">Prototype</span><span class="pill">UI</span><span class="pill">Figma</span><span class="pill">Intégration</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec paper grain" id="process">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow mv-rev">Cadre 04 — Méthode</span>
+            <h2 data-words data-accent="2" style="margin-top:26px">Un projet, quatre étapes qui comptent.</h2>
+          </div>
+          <div class="mira mv-rev"><span class="counter">04<span class="counter-o"> / 04</span></span><span class="mono" style="text-transform:none">Les horaires bougent. La revue du vendredi non.</span></div>
+        </div>
+        <div class="callsheet mv-rev">
+          <div class="callsheet-head">
+            <h3>Call sheet</h3>
+            <span class="mono" style="text-transform:none">Appel d'équipe · Lundi 09:00 · Sur place &amp; à distance</span>
+          </div>
+          <div class="callsheet-body">
+            <div class="cal-row"><span class="n">01</span><div><span class="what">Brief</span><p class="how">Un doc court : objectif, utilisateurs, contenu. Ce qui est dans le plan et ce qui n'y est pas.</p></div><span class="day">Jour 1</span></div>
+            <div class="cal-row"><span class="n">02</span><div><span class="what">Explorer</span><p class="how">Des maquettes, du vrai contenu, un prototype rapide avant de peaufiner.</p></div><span class="day">Sem 1</span></div>
+            <div class="cal-row"><span class="n">03</span><div><span class="what">Construire</span><p class="how">Design et code avancent ensemble : des tokens aux composants, à l'interface réelle, revue dans le navigateur.</p></div><span class="day">Sem 2–3</span></div>
+            <div class="cal-row"><span class="n">04</span><div><span class="what">Livrer</span><p class="how">Mise en ligne, tests mobiles, mesure et itérations. Le suivi continue après la release.</p></div><span class="day">Sem 4</span></div>
+          </div>
+          <div class="callsheet-foot">
+            <span class="mono" style="text-transform:none">That's a wrap</span>
+            <span class="counter" style="font-size:26px">Roll <span class="counter-o">A-07</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-tight paper grain" id="tools">
+      <div class="wrap">
+        <span class="eyebrow mv-rev">Cadre 05 — Outils</span>
+        <h2 class="tools-intro mv-rev" style="font-size:clamp(26px,2.4vw,36px);max-width:20ch;margin-top:20px">Design et code, mêmes mains.</h2>
+        <div class="tool-cols" style="margin-top:34px">
+          <div class="tool-col mv-rev">
+            <div class="head"><span class="mono" style="color:var(--ink)">Design</span><span class="mono">05 outils</span></div>
+            <div class="tag-list"><span class="stick">Figma 01</span><span class="stick">Photoshop 02</span><span class="stick">Canva 03</span><span class="stick">Balsamiq 04</span><span class="stick">Notion 05</span></div>
+          </div>
+          <div class="tool-col mv-rev" style="--d:.08s">
+            <div class="head"><span class="mono" style="color:var(--ink)">Code</span><span class="mono">07 outils</span></div>
+            <div class="tag-list"><span class="stick">HTML 01</span><span class="stick">CSS 02</span><span class="stick">JavaScript 03</span><span class="stick">React 04</span><span class="stick">Git 05</span><span class="stick">GitHub 06</span><span class="stick">VS Code 07</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec dark grain" id="resume">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow mv-rev">Cadre 06 — Résumé</span>
+            <h2 data-words data-accent="1" style="margin-top:26px">Le générique.</h2>
+          </div>
+          <div class="mira mv-rev"><span class="mono" style="text-transform:none">Générique de fin · Études &amp; expériences · 24 fps</span></div>
+        </div>
+        <div class="credits">
+          <div class="credit-row mv-rev"><div><span class="role">Étudiant en 3e année — Licence</span><span class="who">Pigier Côte d'Ivoire · Développement web &amp; mobile</span></div><span class="span">2025 — now</span></div>
+          <div class="credit-row mv-rev" style="--d:.05s"><div><span class="role">BTS Informatique &amp; Développement d'Applications (IDA)</span><span class="who">Pigier Côte d'Ivoire · Diplôme obtenu</span></div><span class="span">2023 — Août 2025</span></div>
+          <div class="credit-row mv-rev" style="--d:.1s"><div><span class="role">Stage de validation de diplôme</span><span class="who">LAHA Communication · Sites web &amp; applications mobiles</span></div><span class="span">2025</span></div>
+          <div class="credit-row mv-rev" style="--d:.15s"><div><span class="role">Recherche de stage — 3 mois</span><span class="who">Validation de la licence · Disponible à Abidjan</span></div><span class="span">2026</span></div>
+        </div>
+        <div class="intro-cta">
+          <a class="btn solid magnet" href="public/CV_NDRI_Kouakou_Patrick_Angelin.pdf" download><span class="fill"></span><span class="roll"><span>Télécharger le CV</span><span>Télécharger le CV</span></span><span class="arrow mono">↓</span></a>
+          <a class="btn ghost magnet" href="https://www.linkedin.com/in/n-dri-patrick-2b107b2aa/" target="_blank" rel="noopener"><span class="fill"></span><span class="roll"><span>Profil LinkedIn</span><span>Profil LinkedIn</span></span><span class="arrow mono">↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec paper grain" id="reviews">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow mv-rev">Cadre 07 — Témoignages</span>
+            <h2 data-words data-accent="1" style="margin-top:26px">Bouche à oreille.</h2>
+          </div>
+          <div class="mira mv-rev"><span class="mono">Exemples de démonstration · à remplacer</span><span class="counter" style="font-size:26px">03<span class="counter-o"> / 03</span></span></div>
+        </div>
+        <div class="clips" id="clips">
+          <figure class="clip"><div class="tape"></div><span class="mono">Clip 01 · Démo</span><blockquote>“Patrick a transformé notre maquette en un site clair et rapide. Le rendu mobile est impeccable.”</blockquote><figcaption class="who"><span>Awa K.</span><span>Studio Kora · Démo</span></figcaption></figure>
+          <figure class="clip"><div class="tape"></div><span class="mono">Clip 02 · Démo</span><blockquote>“Très à l'écoute, précis sur les détails et toujours disponible pour ajuster. Une collaboration simple.”</blockquote><figcaption class="who"><span>Yann B.</span><span>Atelier Nima · Démo</span></figcaption></figure>
+          <figure class="clip"><div class="tape"></div><span class="mono">Clip 03 · Démo</span><blockquote>“Le site est arrivé en avance, propre et facile à mettre à jour. On recommande sans hésiter.”</blockquote><figcaption class="who"><span>Mariam T.</span><span>Maison Nima · Démo</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec paper grain" id="lab">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <span class="eyebrow mv-rev">Cadre 08 — Le labo</span>
+            <h2 data-words data-accent="1" style="margin-top:26px">Expériences &amp; side-projects.</h2>
+          </div>
+          <div class="mira mv-rev"><span class="mono">La bobine du labo · 16mm · 4 frames</span></div>
+        </div>
+        <div class="lab-list">
+          <div class="lab-row mv-rev"><span class="n">01</span><span class="title">Portfolio PatrickDev</span><span class="kind">Projet personnel · 2026</span><span class="stack">HTML · CSS · JS</span></div>
+          <div class="lab-row mv-rev"><span class="n">02</span><span class="title">Application météo</span><span class="kind">Side project · 2026</span><span class="stack">JavaScript · API</span></div>
+          <div class="lab-row mv-rev"><span class="n">03</span><span class="title">Composants d'interface</span><span class="kind">Expérience · 2025</span><span class="stack">React</span></div>
+          <div class="lab-row mv-rev"><span class="n">04</span><span class="title">Maquette d'application mobile</span><span class="kind">Prototype · 2025</span><span class="stack">Figma</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec dark grain" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <span class="eyebrow mv-rev">Cadre 09 — Contact</span>
+          <h2 data-words style="margin-top:22px">Un projet ? Disons « action ».</h2>
+          <p class="lead mv-rev">Tu cherches un développeur front-end pour un stage de 3 mois ou une mission ? Écris-moi — je réponds dans la journée.</p>
+          <div class="email-row mv-rev">
+            <a class="email" href="mailto:patrickndri120@gmail.com">patrickndri120@gmail.com</a>
+            <button class="copy" data-value="patrickndri120@gmail.com">Copier</button>
+          </div>
+          <div class="tickets">
+            <a class="ticket mv-rev" href="https://wa.me/2250500183920" target="_blank" rel="noopener"><span class="no">No. 01</span><span class="date">WhatsApp</span><span class="fine">+225 05 00 18 39 20</span></a>
+            <a class="ticket mv-rev" style="--d:.08s" href="https://github.com/PATRICK110304" target="_blank" rel="noopener"><span class="no">No. 02</span><span class="date">GitHub</span><span class="fine">@PATRICK110304</span></a>
+            <a class="ticket mv-rev" style="--d:.16s" href="https://www.linkedin.com/in/n-dri-patrick-2b107b2aa/" target="_blank" rel="noopener"><span class="no">No. 03</span><span class="date">LinkedIn</span><span class="fine">N'Dri Patrick</span></a>
+          </div>
+        </div>
+        <aside class="onair mv-rev">
+          <span class="board">ON AIR</span>
+          <span class="mono" style="color:var(--fog)">Disponibilité</span>
+          <span class="a-dot"><span class="pulse"></span>Stage de 3 mois · Disponible maintenant</span>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="wide-foot grain">
+    <div class="wrap">
+      <div class="slate" role="button" aria-label="Claquez le clap" tabindex="0">
+        <div class="arm"></div>
+        <div class="cell"><span class="k">Prod.</span><span class="v">Portfolio 2026</span></div>
+        <div class="cell"><span class="k">Scène</span><span class="v">Footer</span></div>
+        <div class="cell"><span class="k">Take</span><span class="v" style="color:var(--brass)"><span id="take">1</span></span></div>
+        <div class="cell"><span class="k">Roll</span><span class="v">PD-09</span></div>
+        <div class="cell"><span class="k">Réalisateur</span><span class="v">PatrickDev</span></div>
+        <div class="stripes"></div>
+      </div>
+      <div class="wrap-foot">
+        <h2 data-words>C'est le clap de fin.</h2>
+        <p>Merci d'avoir tout regardé jusqu'ici. Si tu cherches un profil front-end curieux et rigoureux pour un stage de 3 mois, dis bonjour — je lis chaque message.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Œuvre</h4>
+          <a href="https://northline-commercial-umber.vercel.app/" target="_blank" rel="noopener">Northline Commercial <sup>↗</sup></a><br>
+          <a href="https://zerorang.online/" target="_blank" rel="noopener">ZeroRang <sup>↗</sup></a>
+        </div>
+        <div class="foot-col">
+          <h4>Pages</h4>
+          <a href="#about">À propos</a><br>
+          <a href="#resume">Résumé</a><br>
+          <a href="#reviews">Témoignages</a><br>
+          <a href="#lab">Le labo</a><br>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="foot-col">
+          <h4>Ailleurs</h4>
+          <a href="https://github.com/PATRICK110304" target="_blank" rel="noopener">GitHub <sup>↗</sup></a><br>
+          <a href="https://www.linkedin.com/in/n-dri-patrick-2b107b2aa/" target="_blank" rel="noopener">LinkedIn <sup>↗</sup></a><br>
+          <a href="https://wa.me/2250500183920" target="_blank" rel="noopener">WhatsApp <sup>↗</sup></a><br>
+          <a href="mailto:patrickndri120@gmail.com">patrickndri120@gmail.com</a>
+        </div>
+      </div>
+      <div class="legal">
+        <span class="mono">© 2026 N'Dri Kouakou Patrick Angelin · Tous droits réservés</span>
+        <span class="mono">Heure locale <span class="clock" id="clock">—:—:—</span> · Abidjan</span>
+        <button class="totop" id="totop">Retour en haut ↑</button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lens" id="lens" aria-hidden="true"></div>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="close" aria-label="Fermer">✕</button>
+    <figure>
+      <img id="lbImg" src="" alt="">
+      <figcaption><span class="ttl" id="lbTitle">—</span><span class="mono" id="lbKind" style="color:var(--stone)">—</span><a class="lb-link" id="lbLink" href="#" target="_blank" rel="noopener">Ouvrir le site <span aria-hidden="true">↗</span></a></figcaption>
+    </figure>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
