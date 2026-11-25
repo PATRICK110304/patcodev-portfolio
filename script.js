@@ -267,6 +267,34 @@
       alt: "Aperçu de l'application ZeroRang",
       seed: "zerorang",
       url: "https://zerorang.online/"
+    },
+    {
+      frame: "03A",
+      title: "Groupe Scolaire Farandole",
+      kind: "Web · Établissement scolaire",
+      role: "Développeur web",
+      client: "Groupe Scolaire Farandole",
+      year: "2026",
+      tags: ["Next.js", "Tailwind", "Prisma", "PostgreSQL"],
+      shot: "public/farandole-shot.webp",
+      thumb: "public/farandole-thumb.webp",
+      alt: "Aperçu du site du Groupe Scolaire Farandole",
+      seed: "farandole",
+      url: "https://farandoleci.vercel.app/"
+    },
+    {
+      frame: "04A",
+      title: "Groupe Scolaire Madeleine-Daniélou",
+      kind: "Web · Établissement scolaire",
+      role: "Développeur web",
+      client: "GSMD Abidjan",
+      year: "2026",
+      tags: ["React 19", "Vite", "Supabase", "Express"],
+      shot: "public/madeleine-shot.webp",
+      thumb: "public/madeleine-thumb.webp",
+      alt: "Aperçu du site du Groupe Scolaire Madeleine-Daniélou",
+      seed: "madeleine",
+      url: "https://madeleinedanielou.vercel.app/"
     }
   ];
 
